@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
       };
     case ADD_PLACE:
       const newPlace = new Place(
-        action.placeData.id.toString(),
+        action.placeData.id,
         action.placeData.title,
         action.placeData.image
       );

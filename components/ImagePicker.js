@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, Button, Alert } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import * as Permissions from "expo-permissions";
+import * as Camera from "expo-camera";
+//import * as Permissions from "expo-permissions";
 
 import Colors from "../constants/Colors";
 
@@ -9,10 +10,7 @@ const ImgPicker = (props) => {
   const [pickedImage, setPickedImage] = useState();
 
   const verifyPermissions = async () => {
-    const result = await Permissions.askAsync(
-      Permissions.CAMERA,
-      Permissions.MEDIA_LIBRARY
-    );
+    const result = await Camera.requestCameraPermissionsAsync();
     if (result.status !== "granted") {
       Alert.alert(
         "Insufficient permissions!",
