@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     height: 70,
     borderRadius: 35,
     backgroundColor: "#ccc",
-    //borderBottomColor: Colors.primaryColor,
+    borderColor: Colors.primaryColor,
     borderWidth: 1,
   },
   infoContainer: {
